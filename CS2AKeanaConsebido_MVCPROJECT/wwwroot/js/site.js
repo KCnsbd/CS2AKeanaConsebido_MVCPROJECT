@@ -1,19 +1,14 @@
 ﻿const AddStudent = async (student) => {
     try {
-        const result = await AjaxPOST('/Student/AddNew', student);
-    }
-    catch {
+        const result = await AjaxPOST('/Student/AddStudent', student);
         if (result.success) {
             alert('Student Added Successfuly!');
             window.location.href = '/Student/Index';
-        }
-
-        else {
+        } else {
             alert('Failed to Add Student:' + result.message);
         }
     }
-
-    catch (error) {
+        catch (error) {
         console.error('Error Adding Student: ', error);
         alert('An error occured while adding the student.');
     }
