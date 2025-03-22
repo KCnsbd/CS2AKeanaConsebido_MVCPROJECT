@@ -12,7 +12,7 @@ namespace CS2AKeanaConsebido_MVCPROJECT.BusLogic.Repository
     {
         IDbConnection _connection;
 
-        readonly string connectionString = "Server=(LocalDB)\\LocalDB; Database=mvc_db; Trusted_Connection=True; MultipleActiveResultSets=true";
+        readonly string connectionString = "Server=KC-CONSEBIDO\\SQLEXPRESS01; Database=Student_DB; Trusted_Connection=True; MultipleActiveResultSets=true";
         public GenericRepository()
         {
 

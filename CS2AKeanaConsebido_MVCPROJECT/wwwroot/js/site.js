@@ -1,4 +1,33 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿const AddStudent = async (student) => {
+    try {
+        const result = await AjaxPOST('/Student/AddNew', student);
+    }
+    catch {
+        if (result.success) {
+            alert('Student Added Successfuly!');
+            window.location.href = '/Student/Index';
+        }
 
-// Write your JavaScript code.
+        else {
+            alert('Failed to Add Student:' + result.message);
+        }
+    }
+
+    catch (error) {
+        console.error('Error Adding Student: ', error);
+        alert('An error occured while adding the student.');
+    }
+}
+
+$(document).ready(function () {
+    $('#addStudentForm').on('submit', function (e) {
+        e.preventDefault();
+        const student = {
+            FirstName: $('#Firstname').val(),
+            LastName: $('#Lastname').val(),
+            Age: $('#Age').val(),
+            Course: $('#Course').val()
+        };
+        AddStudent(student);
+    });
+});
