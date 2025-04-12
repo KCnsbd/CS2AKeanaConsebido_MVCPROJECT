@@ -20,5 +20,19 @@ namespace CS2AKeanaConsebido_MVCPROJECT.BusLogic.Service
         public IEnumerable<tblStudent> GetAll() {
             return _studentRepository.GetAll();
         }
+
+        public tblStudent GetById(int id)
+        {
+            return _studentRepository.GetById(id);
+        }
+
+        public bool Update(tblStudent student)
+        {
+            return _studentRepository.Update(student);
+        }
+
+        public tblStudent Delete(int id) {
+            return _studentRepository.Delete(id);
+        }
     }
 }

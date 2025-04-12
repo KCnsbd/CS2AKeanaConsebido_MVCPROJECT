@@ -8,6 +8,7 @@
             <th>Last Name</th>
             <th>Age</th>
             <th>Course</th>
+            <th>Actions</th>
         </tr>
         @foreach(var student in Model)
         {
@@ -16,6 +17,7 @@
                 <td>@student.LastName</td>
                 <td>@student.Age</td>
                 <td>@student.Course</td>
+                <td><a class="btn btn-sm btn-warning" href="/Student/EditStudent/@student.id"> Edit</a></td>
             </tr>
         }
     </table>

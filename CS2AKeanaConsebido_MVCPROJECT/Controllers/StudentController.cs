@@ -34,5 +34,11 @@ namespace CS2AKeanaConsebido_MVCPROJECT.Controllers
             }
 
         }
+
+        [HttpGet]
+
+        public IActionResult EditStudent(tblStudent student) {
+                return View();
+        }
     }
 }
